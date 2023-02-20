@@ -7,10 +7,10 @@ services:
     restart: unless-stopped
     command: schedule
     environment:
-      BACKUP_ENCRYPTION_KEY: "fxFNy77Vj1pYgG5f"
-      TZ: Europe/Paris #set local timezone using TZ database name standard as seen - https://manpages.ubuntu.com/manpages/bionic/man3/DateTime::TimeZone::Catalog.3pm.html
-      PORTAINER_BACKUP_URL: "https://portainer.maxens.tech"
-      PORTAINER_BACKUP_TOKEN: "ptr_o01zXFQbnwlFSuW59FjTK3DZHZfr1482XBkVJWulRpY="
+      BACKUP_ENCRYPTION_KEY: "Mot de passe du fichier de sauvegarde"
+      TZ: Europe/Paris #https://manpages.ubuntu.com/manpages/bionic/man3/DateTime::TimeZone::Catalog.3pm.html
+      PORTAINER_BACKUP_URL: "https://portainer.monserveur.com"
+      PORTAINER_BACKUP_TOKEN: "token portainer"
       PORTAINER_BACKUP_SCHEDULE: "0 0 0 * * *"
 
     volumes:
