@@ -4,7 +4,7 @@
 docker-compose.yml
 
 ```docker
-  version: '3.2'
+version: '3.2'
 services:
   Backup-Portainer:
     container_name: Backup
