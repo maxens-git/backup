@@ -10,12 +10,6 @@ ENV TZ=UTC
 
 # set timezone from ENVs
 RUN export TZ=/usr/share/zoneinfo/${TZ}
-
-
-
-
-
-
 ENV TZ=UTC
 
 # INSTALL ADDITIONAL IMAGE DEPENDENCIES AND COPY APPLICATION TO IMAGE
@@ -50,12 +44,6 @@ RUN chmod +x /entrypoint.sh && \
     chmod +x /dropbox_uploader.sh
 
 VOLUME "/backup"
-
-
-
-RUN npm install --silent
-
-
 
 RUN npm install --silent
 
