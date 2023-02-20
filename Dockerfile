@@ -5,7 +5,7 @@ ARG TARGETARCH
 ARG BUILDDATE
 ARG BUILDVERSION
 
-# set TZ default if not defined in ENVs
+
 
 # set timezone from ENVs
 RUN export TZ=/usr/share/zoneinfo/${TZ}
