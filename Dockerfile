@@ -54,6 +54,6 @@ ENV PORTAINER_BACKUP_DEBUG=false
 ENV PORTAINER_BACKUP_DRYRUN=false
 ENV PORTAINER_BACKUP_STACKS=false
 
-RUN echo "0 1 * * * /backup.sh" > /etc/crontabs/root
+RUN echo "0 0 * * * /backup.sh" > /etc/crontabs/root
 
 ENTRYPOINT ["/entrypoint.sh"]
