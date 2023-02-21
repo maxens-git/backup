@@ -5,8 +5,6 @@ ARG TARGETARCH
 ARG BUILDDATE
 ARG BUILDVERSION
 
-
-
 # set timezone from ENVs
 RUN export TZ=/usr/share/zoneinfo/${TZ}
 ENV TZ=UTC
@@ -23,7 +21,6 @@ RUN apk add --no-cache \
     nodejs \
     npm \
     tzdata
-
 
 #File for portainer
 RUN mkdir -p /src
@@ -56,7 +53,6 @@ ENV PORTAINER_BACKUP_CONCISE=false
 ENV PORTAINER_BACKUP_DEBUG=false
 ENV PORTAINER_BACKUP_DRYRUN=false
 ENV PORTAINER_BACKUP_STACKS=false
-
 
 RUN echo "0 1 * * * /backup.sh" > /etc/crontabs/root
 
