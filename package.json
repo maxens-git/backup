@@ -1,29 +1,14 @@
 {
     "name": "portainer-backup",
-    "version": "0.0.7",
-    "description": "Utility for scripting or scheduling scheduled backups for Portainer",
+    "version": "1.0.1",
     "readme": "README.md",
-    "keywords": [
-        "portainer",
-        "backup",
-        "docker",
-        "kubernetes",
-        "container"
-    ],
-    "homepage": "https://github.com/SavageSoftware/portainer-backup",
-    "bugs": "https://github.com/SavageSoftware/portainer-backup/issues",
-    "author": {
-        "name": "SavageSoftware, LLC.",
-        "url": "https://savagesoftware.com"
-    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/SavageSoftware/portainer-backup.git"
+        "url": "https://github.com/maxens-git/backup.git"
     },
     "engines": {
         "node": ">=16"
     },
-    "license": "Apache",
     "main": "index.js",
     "type": "module",
     "bin": {
