@@ -11,24 +11,24 @@ BACKUP_FILE3="Nginx_Proxy_Manager_$(date "+%F-%H%M%S")"
 #Sauvegarde bitwarden
 sqlite3 /data/vaultwarden/db.sqlite3 ".backup '/tmp/db.sqlite3'"
 tar -czf - /tmp/db.sqlite3 /data/vaultwarden/attachments | openssl enc -e -aes256 -salt -pbkdf2 -pass pass:${BACKUP_ENCRYPTION_KEY} -out /tmp/${BACKUP_FILE}.tar.gz
-/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
+/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE}.tar.gz /Bitwarden/${BACKUP_FILE}.tar.gz
 echo "sauvegarde bitwarden terminée"
 
 #Sauvegarde NPM
 tar -czf - /data/npm | openssl enc -e -aes256 -salt -pbkdf2 -pass pass:${BACKUP_ENCRYPTION_KEY} -out /tmp/${BACKUP_FILE3}.tar.gz
-/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE3}.tar.gz /${BACKUP_FILE3}.tar.gz
+/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE3}.tar.gz /Nginx_Proxy_Manager/${BACKUP_FILE3}.tar.gz
 echo "sauvegarde nginx proxy manager terminée"
 
 #Sauvegarde Portainer
 node /src/index.js backup
 
 tar -czf - /portainer | openssl enc -e -aes256 -salt -pbkdf2 -pass pass:${BACKUP_ENCRYPTION_KEY} -out /tmp/${BACKUP_FILE2}.tar.gz
-/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE2}.tar.gz /${BACKUP_FILE2}.tar.gz
+/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE2}.tar.gz /Portainer/${BACKUP_FILE2}.tar.gz
 echo "sauvegarde portainer termimnée"
 
 #Sauvegarde Adguard Home
 tar -czf - /data/adguardhome | openssl enc -e -aes256 -salt -pbkdf2 -pass pass:${BACKUP_ENCRYPTION_KEY} -out /tmp/${BACKUP_FILE1}.tar.gz
-/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE1}.tar.gz /${BACKUP_FILE1}.tar.gz
+/dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE1}.tar.gz /Adguard_Home/${BACKUP_FILE1}.tar.gz
 echo "sauvegarde adguard home terminée"
 
 
