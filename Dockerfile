@@ -7,7 +7,6 @@ ARG BUILDVERSION
 
 # set timezone from ENVs
 RUN export TZ=/usr/share/zoneinfo/${TZ}
-ENV TZ=UTC
 
 # INSTALL ADDITIONAL IMAGE DEPENDENCIES AND COPY APPLICATION TO IMAGE
 RUN apk update
