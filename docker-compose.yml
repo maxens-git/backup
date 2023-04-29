@@ -1,19 +1,13 @@
 version: '3.2'
 services:
   Backup-Portainer:
-    container_name: Backup
+    container_name: backup
     image: ghcr.io/maxens-git/backup:latest
-    hostname: portainer-backup
     restart: unless-stopped
-    command: schedule
+    labels:
+      - diun.enable=true
     environment:
-      BACKUP_ENCRYPTION_KEY: "Mot de passe du fichier de sauvegarde"
-      TZ: Europe/Paris #https://manpages.ubuntu.com/manpages/bionic/man3/DateTime::TimeZone::Catalog.3pm.html
-      PORTAINER_BACKUP_URL: "https://portainer.monserveur.com"
-      PORTAINER_BACKUP_TOKEN: "token portainer"
-      PORTAINER_BACKUP_SCHEDULE: "0 0 * * *"
+      BACKUP_ENCRYPTION_KEY: ${BACKUP_ENCRYPTION_KEY}
+      TZ: Europe/Paris #set local timezone using TZ database name standard as seen - https://manpages.ubuntu.com/manpages/bionic/man3/DateTime::TimeZone::Catalog.3pm.html
     volumes:
-      - /docker/npm:/data/npm
-      - /docker/vaultwarden:/data/vaultwarden
-      - /docker/adguardhome:/data/adguardhome
-      - ./config:/config  
+      - /docker:/docker
