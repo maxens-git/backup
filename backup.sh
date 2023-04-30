@@ -4,7 +4,7 @@
 BACKUP_FILE="Bitwardenrs_$(date "+%F-%H%M%S")"
 BACKUP_FILE1="Adguard_Home_$(date "+%F-%H%M%S")"
 BACKUP_FILE3="Nginx_Proxy_Manager_$(date "+%F-%H%M%S")"
-BACKUP_FILE4="Minecraft-spigot_$(date "+%F-%H%M%S")"
+#BACKUP_FILE4="Minecraft-spigot_$(date "+%F-%H%M%S")"
 
 
 #Sauvegarde bitwarden
